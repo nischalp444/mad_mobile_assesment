@@ -1,0 +1,7 @@
+.cardContainer {
+  /* width: 100vw;
+  height: 100vh; */
+  overflow-wrap: break-word;
+  display: flex;
+  flex-wrap: wrap;
+}
