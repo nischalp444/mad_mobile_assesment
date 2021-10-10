@@ -3,7 +3,6 @@ import './cardContainer.css';
 
 export default function EditingValues() {
 
-
   return(
     <div>
 
