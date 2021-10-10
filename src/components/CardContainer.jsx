@@ -3,10 +3,8 @@ import Card from './Card';
 import './cardContainer.css';
 import CustomCard from './customCard/CustomCard';
 
-export default function CardContainer() {
-  const [information, setInformation] = useState([]);
+export default function CardContainer(props) {
   const [filterName, setFilterName] = useState('');
-  const [fValue, setFValue] = useState([]);
   const [isSorted, setIsSorted] = useState(false);
 
   const [editInfo, setEditInfo] = useState({
@@ -21,21 +19,8 @@ export default function CardContainer() {
     setFilterName(e.target.value);
   };
 
-  async function fetchData() {
-    const response = await fetch('https://randomuser.me/api/?results=10');
-    const data = await response.json();
-    const value = data.results;
-    setInformation(value);
-    setFValue(value);
-    console.log(value);
-  }
-
   useEffect(() => {
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    let result = [...information].filter((inf) =>
+    let result = [...props.information].filter((inf) =>
       inf['name'].first.toLowerCase().includes(filterName.toLocaleLowerCase())
     );
 
@@ -45,7 +30,7 @@ export default function CardContainer() {
           ? 1
           : -1;
       });
-    setFValue(result);
+    props.setFValue(result);
   }, [filterName, isSorted]);
 
   return (
@@ -68,16 +53,20 @@ export default function CardContainer() {
           picture={editInfo['picture']}
           email={editInfo.email}
           phone={editInfo.phone}
+          setToggleForm={props.setToggleForm}
         />
       </div>
-      {fValue.map((info, index) => (
+      {props.fValue.map((info, index) => (
         <Card
           key={index}
+          info={info}
           location={info['location']}
           name={info['name']}
           picture={info['picture']}
           email={info.email}
           phone={info.phone}
+          setToggleForm={props.setToggleForm}
+          setEditObj={props.setEditObj}
         />
       ))}
     </div>
