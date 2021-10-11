@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
-import './cardContainer.css';
-import CustomCard from './customCard/CustomCard';
 
 export default function CardContainer(props) {
   const [filterName, setFilterName] = useState('');
@@ -39,7 +37,7 @@ export default function CardContainer(props) {
         <div>
           <input
             className="filter"
-            placeholder="Name"
+            placeholder="Search by First Name"
             value={filterName}
             onChange={handleChange}
           />
