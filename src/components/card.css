@@ -43,7 +43,6 @@ p {
 }
 
 .card-container .round {
-  border: 1px solid #ffffff;
   border-radius: 50%;
   border: 5px solid #ffffff;
   box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.3);
@@ -54,8 +53,12 @@ p {
 }
 
 .editForm {
+  top: 25px;
   z-index: 10;
   position: absolute;
   height: 100vh;
-  background-color: pink;
+  background-color: grey;
+  height: 100px;
+  width: 100px;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.3);
 }

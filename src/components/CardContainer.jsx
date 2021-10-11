@@ -47,14 +47,6 @@ export default function CardContainer(props) {
             Sort Alphabetically by First Name
           </button>
         </div>
-        <Card
-          location={editInfo['location']}
-          name={editInfo['name']}
-          picture={editInfo['picture']}
-          email={editInfo.email}
-          phone={editInfo.phone}
-          setToggleForm={props.setToggleForm}
-        />
       </div>
       {props.fValue.map((info, index) => (
         <Card

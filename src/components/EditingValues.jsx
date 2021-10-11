@@ -39,6 +39,12 @@ export default function EditingValues(props) {
           };
           props.editCard(updatedInfo);
           props.setToggleForm(false);
+          setEditFirstName("")
+          setEditLastName("")
+          setEditEmail("")
+          setEditPhone("")
+          setEditCityLocation("")
+          setEditCountryLocation("") 
         }}
       >
         <lable>First Name</lable>

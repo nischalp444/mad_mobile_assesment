@@ -14,7 +14,6 @@ export default function Card(props) {
     setEditObj,
   } = props;
   const onClickButton = (e) => {
-    alert('Hello');
     setToggleForm(true);
     setEditObj(props.info);
   };
@@ -23,7 +22,7 @@ export default function Card(props) {
     <div className="abc">
       <div className="card-container">
         <img className="editProfile" src={'./icon.png'} alt="" />
-        <button onClick={onClickButton}>EDit User</button>
+        <button onClick={onClickButton}>Edit User</button>
 
         <h3>{`${name.first} ${name.last}`}</h3>
         <img className="round" src={picture.large} alt="user" />
